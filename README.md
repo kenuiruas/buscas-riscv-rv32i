@@ -120,14 +120,14 @@ As métricas abaixo devem ser preenchidas a partir de execuções no Ripes. A co
 
 | Alvo | Algoritmo | Instruções | Ciclos | CPI |
 | ---: | --- | ---: | ---: | ---: |
-| 2 | Sequencial | — | — | — |
-| 2 | Binária | — | — | — |
-| 16 | Sequencial | — | — | — |
-| 16 | Binária | — | — | — |
-| 32 | Sequencial | — | — | — |
-| 32 | Binária | — | — | — |
-| 17 | Sequencial | — | — | — |
-| 17 | Binária | — | — | — |
+| 2 | Sequencial | 58 | 84 | 1,45 |
+| 2 | Binária | 99 | 131 | 1,32 |
+| 16 | Sequencial | 114 | 154 | 1,35 |
+| 16 | Binária | 63 | 89 | 1,41 |
+| 32 | Sequencial | 178 | 234 | 1,31 |
+| 32 | Binária | 111 | 153 | 1,38 |
+| 17 | Sequencial | 123 | 165 | 1,34 |
+| 17 | Binária | 103 | 139 | 1,35 |
 
 As capturas do simulador devem ser colocadas na pasta `evidencias/` junto com a validação funcional.
 
