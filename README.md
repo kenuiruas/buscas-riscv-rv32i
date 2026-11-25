@@ -116,7 +116,7 @@ Também foram verificados valores fora dos limites do vetor, um vetor vazio e um
 
 Modelo de processador: 5 estágios, RV32I.
 
-As métricas abaixo devem ser preenchidas a partir de execuções no Ripes. A contagem deve abranger o programa completo, incluindo preparação dos dados e saída no console, que são iguais nos dois arquivos. O CPI corresponde ao número de ciclos dividido pelo número de instruções executadas, conforme a contagem do simulador.
+As métricas abaixo foram coletadas durante a execução dos dois algoritmos no Ripes, utilizando a mesma configuração de processador. A contagem considera o programa completo, incluindo a preparação dos dados e a saída no console. O CPI corresponde à razão entre o número de ciclos e o número de instruções executadas.
 
 | Alvo | Algoritmo | Instruções | Ciclos | CPI |
 | ---: | --- | ---: | ---: | ---: |
@@ -129,7 +129,7 @@ As métricas abaixo devem ser preenchidas a partir de execuções no Ripes. A co
 | 17 | Sequencial | 123 | 165 | 1,34 |
 | 17 | Binária | 103 | 139 | 1,35 |
 
-As capturas do simulador devem ser colocadas na pasta `evidencias/` junto com a validação funcional.
+As capturas das oito execuções estão disponíveis na pasta `evidencias/`, junto com os resultados da validação funcional.
 
 ## 6. Análise dos resultados
 
@@ -140,6 +140,8 @@ A busca sequencial possui complexidade O(n) no pior caso, enquanto a binária po
 Na arquitetura RV32I, as duas versões utilizam instruções de carga (`lw`) para ler os elementos e desvios condicionais (`beq`, `blt` e `bge`) para controlar o fluxo. A quantidade de desvios e as dependências entre instruções podem afetar o desempenho de um processador com pipeline. O resultado em ciclos também depende do modelo de CPU escolhido no Ripes.
 
 Ambas as versões são iterativas e usam uma quantidade constante de memória auxiliar. A rotina de execução ocupa 16 bytes de pilha em ambos os programas. A busca binária tem a vantagem de reduzir o número de acessos ao vetor em muitos casos, mas exige que ele já esteja ordenado. O custo de ordenar o vetor não faz parte desta comparação.
+
+Os resultados obtidos no Ripes mostram que a busca binária apresentou menor número de instruções e ciclos em três dos quatro casos analisados. Na busca pelo valor 32, por exemplo, foram necessários 153 ciclos na busca binária, contra 234 na sequencial. Já para o valor 2, a busca sequencial foi mais eficiente, utilizando apenas 84 ciclos contra 131 da binária. Também foi possível observar que um CPI menor não significa necessariamente uma execução mais rápida, pois o total de instruções executadas influencia diretamente no desempenho.
 
 ## 7. Conclusão
 
