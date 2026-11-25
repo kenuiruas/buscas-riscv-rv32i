@@ -1,0 +1,27 @@
+Validacao funcional local - RV32I
+
+Montagem: Clang, alvo riscv32, -march=rv32i -mabi=ilp32.
+Execucao: interpretador local de instrucoes RV32I com suporte aos ecalls de console usados no projeto.
+O contador de instrucoes inclui o programa completo e a chamada de encerramento.
+Nao se trata de uma medicao de ciclos ou CPI do Ripes.
+A pilha e o registrador s0 tambem foram conferidos ao fim de cada execucao.
+
+Algoritmo,Alvo,Tamanho,Indice,Comparacoes,Instrucoes interpretadas
+sequencial,2,16,0,1,58
+sequencial,16,16,7,8,114
+sequencial,32,16,15,16,178
+sequencial,17,16,-1,9,123
+sequencial,0,16,-1,1,59
+sequencial,34,16,-1,16,183
+sequencial,2,0,-1,0,55
+sequencial,2,1,0,1,58
+binaria,2,16,0,4,99
+binaria,16,16,7,1,63
+binaria,32,16,15,5,111
+binaria,17,16,-1,4,103
+binaria,0,16,-1,4,103
+binaria,34,16,-1,5,115
+binaria,2,0,-1,0,55
+binaria,2,1,0,1,63
+
+16/16 casos com resultados corretos.
